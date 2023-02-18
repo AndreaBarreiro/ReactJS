@@ -1,0 +1,50 @@
+.NavBar {
+    display: grid;
+    background: rgb(204,104,27);
+background: linear-gradient(10deg, rgba(204,104,27,1) 71%, rgba(139,65,28,1) 82%);
+}
+
+.header {
+    display: inline-flex;
+    display: grid;
+    grid-template-columns: 40% 30% 20% 10%;
+}
+
+.logo {
+    width: auto;
+    height: 250px;
+    margin: 0.5rem;
+    border-radius: 1%;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: rgba(29, 27, 27, 0.836);
+    text-shadow: -44px 18px 4px rgba(230,189,113,0.6);
+}
+
+.h-uno {
+    display: flex;
+    align-items: center;
+}
+
+.enlaces {
+    display: flex;
+    align-items: end;
+}
+
+nav ul a {
+    text-decoration: none;
+    margin: 1rem;
+    color: bisque;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+nav ul a:hover {
+    background-color: wheat;
+    color: rgb(121, 61, 6);
+    padding: 0.8rem;
+    border-radius: 6%;
+}
+

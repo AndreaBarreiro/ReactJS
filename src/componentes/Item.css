@@ -1,0 +1,5 @@
+.item-list-container {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
