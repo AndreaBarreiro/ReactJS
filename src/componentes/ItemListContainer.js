@@ -45,7 +45,7 @@ function ItemListContainer ({greeting}){
     return (
       <>
       <h2>{greeting}</h2>
-      <ItemList products = {products}/>
+      <ItemList items = {products}/>
       </>
     );
 }

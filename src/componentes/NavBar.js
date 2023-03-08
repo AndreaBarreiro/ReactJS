@@ -19,13 +19,15 @@ function NavBar() {
 
         <div className="enlaces">
           <nav>
+            <li>
             <ul>
-              <link to="/">Inicio</link>
-              <link to="/detalle">PochiProductos</link>
-              <link to="/category/juguetes">Juguetes</link>
-              <link to="/category/ropadeblanco">Ropa de Blanco</link>
-              <link to="/category/accesorios">Accesorios</link>
+              <Link to="/">Inicio</Link>
+              <Link to="/detalle">PochiProductos</Link>
+              <Link to="/category/juguetes">Juguetes</Link>
+              <Link to="/category/ropadeblanco">Ropa de Blanco</Link>
+              <Link to="/category/accesorios">Accesorios</Link>
             </ul>
+            </li>
           </nav>
         </div>
 
