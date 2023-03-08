@@ -13,30 +13,23 @@ function getItemsFromDatabase () {
   }) 
 };
 
-function getItemsByCategoryFromDatabase(categoryURL) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let pochisFiltered = pochis.filter(
-        (item) => item.category === categoryURL
-      );
-      resolve(pochisFiltered);
-    }, 2000);
-  });
-}
 
 function ItemListContainer ({greeting}){
   const [products, setProducts] = useState([]);
 
-  const params = useParams();
-  const idCategory = params.idCategory;
+  
+  const {idCategory} = useParams;
 
   useEffect(() => {
      let promiseData = getItemsFromDatabase();
 
      promiseData
      .then ( (respuesta)=> {
+      if(idCategory){
+        setProducts(respuesta.filter((item) => item.category=== idCategory))
+      } else {
       setProducts(respuesta);
-     })
+     }})
      .catch((error)=> alert(error));
      }, []);
 

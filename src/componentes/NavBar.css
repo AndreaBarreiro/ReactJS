@@ -23,6 +23,12 @@ h1 {
     text-shadow: -44px 18px 4px rgba(230,189,113,0.6);
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
 .h-uno {
     display: flex;
     align-items: center;

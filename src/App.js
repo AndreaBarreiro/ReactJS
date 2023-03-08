@@ -16,13 +16,10 @@ function App() {
           element={< ItemListContainer greeting= {"Hola Pochitos!"} /> }
         />
 
-        <Route path="" element={<ItemDetailContainer/>} />
         <Route path="/detalle/:idItems" element={<ItemDetailContainer />}/>
 
         <Route
-        path="/category/:idCategory"
-        element={<ItemListContainer greeting= {"Hola Pochitos!"}/>}
-        />  
+        path="/category/:idCategory" element= {<ItemListContainer greeting={"Hola Pochitos!"}/>} />  
 
         </Routes>
         </BrowserRouter> 
