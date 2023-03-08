@@ -1,0 +1,18 @@
+.item-list-container {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+/* .productos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+/* esto n se aplica */
+
+h5 {
+    text-align: center;
+    font-size: 2rem;
+    color: rgba(212, 168, 45, 0.418);
+}

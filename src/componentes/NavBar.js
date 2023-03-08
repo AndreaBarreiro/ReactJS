@@ -1,6 +1,7 @@
 import "./NavBar.css";
 import CartWidget from "./CartWidget";
 import POCHIROKES from "../img/POCHITROKES.gif";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -19,9 +20,11 @@ function NavBar() {
         <div className="enlaces">
           <nav>
             <ul>
-              <a href="#">Nosotros</a>
-              <a href="#">PochiProductos</a>
-              <a href="#">Contacto</a>
+              <link to="/">Inicio</link>
+              <link to="/detalle">PochiProductos</link>
+              <link to="/category/juguetes">Juguetes</link>
+              <link to="/category/ropadeblanco">Ropa de Blanco</link>
+              <link to="/category/accesorios">Accesorios</link>
             </ul>
           </nav>
         </div>
