@@ -1,5 +1,5 @@
 .NavBar {
-    display: grid;
+    display: revert;
     background: rgb(204,104,27);
 background: linear-gradient(10deg, rgba(204,104,27,1) 71%, rgba(139,65,28,1) 82%);
 }
@@ -37,6 +37,10 @@ h2 {
 .enlaces {
     display: flex;
     align-items: end;
+}
+
+nav ul {
+    display: flex;
 }
 
 nav ul a {

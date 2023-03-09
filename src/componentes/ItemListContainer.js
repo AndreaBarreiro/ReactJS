@@ -18,7 +18,7 @@ function ItemListContainer ({greeting}){
   const [products, setProducts] = useState([]);
 
   
-  const {idCategory} = useParams;
+  const {idCategory} = useParams();
 
   useEffect(() => {
      let promiseData = getItemsFromDatabase();
@@ -26,12 +26,12 @@ function ItemListContainer ({greeting}){
      promiseData
      .then ( (respuesta)=> {
       if(idCategory){
-        setProducts(respuesta.filter((item) => item.category=== idCategory))
+        setProducts(respuesta.filter((item) => item.category === idCategory))
       } else {
       setProducts(respuesta);
      }})
      .catch((error)=> alert(error));
-     }, []);
+     }, [idCategory]);
 
   
 

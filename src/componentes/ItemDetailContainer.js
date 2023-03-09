@@ -1,24 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import pochis from "../../src/products/products";
+import "./ItemListContainer.css";
 
 
-function getOneItemFromDatabase(idItem) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        let encontrado = pochis.find((item) => item.id === Number(idItem));
-        resolve(encontrado);
-      }, 2000);
-    });
-  }
-
-
-// return new Promise ((resolve, reject) => {
-//     setTimeout(() => {
+// function getOneItemFromDatabase(idItem) {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
 //         let encontrado = pochis.find((item) => item.id === Number(idItem));
 //         resolve(encontrado);
-//     }, 1000);
-// });
+//       }, 2000);
+//     });
+//   }
 
 
 function ItemDetailContainer ({greeting}){
@@ -28,11 +21,22 @@ function ItemDetailContainer ({greeting}){
     const params = useParams();
     const idProduct = params.idProduct;
   
+    // useEffect(() => {
+    //     getOneItemFromDatabase(idProduct).then((respuesta) => {
+    //         setProduct(respuesta);
+    //       });
+    // },[]);
+
     useEffect(() => {
-        getOneItemFromDatabase(idProduct).then((respuesta) => {
-            setProduct(respuesta);
-          });
-    },[]);
+      const promesaItem = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          let encontrado = pochis.find((item) => item.id === Number(idProduct));
+          resolve(encontrado);
+        }, 1000);
+      });
+  
+      promesaItem.then((respuesta) => setProduct(respuesta));
+    }, []);
     
   
       return (
@@ -41,10 +45,9 @@ function ItemDetailContainer ({greeting}){
             <h2>{greeting}</h2>
 
             <ul className="item-list">
-          <li className="item-card" 
-            key={product.id}>
+            <li className="item-card" key={product.id}>
             <img src={product.pictureUrl} alt={product.description} />
-            <h4>{`${product.title} ${product.detalle} ${product.price}`}</h4>
+            <h4>{`${product.title} ${product.detalle} ${product.price} ${product.category}`}</h4>
             
             <button>Agregar al carrito</button>
           </li>

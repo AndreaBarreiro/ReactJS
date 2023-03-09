@@ -22,7 +22,6 @@ function NavBar() {
             <li>
             <ul>
               <Link to="/">Inicio</Link>
-              <Link to="/detalle">PochiProductos</Link>
               <Link to="/category/juguetes">Juguetes</Link>
               <Link to="/category/ropadeblanco">Ropa de Blanco</Link>
               <Link to="/category/accesorios">Accesorios</Link>

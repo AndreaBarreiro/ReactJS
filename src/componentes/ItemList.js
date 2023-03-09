@@ -1,26 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "./ItemList.css";
 
-
-// export const getFetch = new Promise ((response, rejected) => {
-//     let cargaUrl = "https://andreabarreiro.github.io/ReactJS/"
-//     if (cargaUrl === "https://andreabarreiro.github.io/ReactJS/") {
-//         setTimeout(()=> {response(items);}, 2000)
-//     }
-//     else {
-//         rejected ("Error")
-//     }
-// })
-// function ItemList (items) {
-
-//     return (
-//         <div className="productos-content">
-//             {items.map(items => {
-//                 return <Item key={items.id} title={items.title} description={items.description} img={items.pictureUrl} price={items.price} />
-//             })}
-//         </div>
-//     );
-// };
 
 export default function ItemList({ items }) {
     return (
@@ -30,11 +11,11 @@ export default function ItemList({ items }) {
           {items.map((item) => (
   
             <ul className="item-list">
-          <li className="item-card" 
+            <li className="item-card" 
             key={item.id}>
             <img src={item.pictureUrl} alt={item.description} />
-            <h4>{`${item.title} ${item.detalle} ${item.price}`}</h4>
-            <small>{item.category}</small>
+            <h4>{`${item.title}`}</h4>
+            <h4>$ {`${item.price}`}</h4>
               <br />
   
               <Link to={`/detalle/${item.id}`}>
@@ -51,4 +32,3 @@ export default function ItemList({ items }) {
   }
   
 
-// recibe el props y mapea 

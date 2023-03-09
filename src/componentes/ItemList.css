@@ -4,6 +4,24 @@
     gap: 2rem;
     margin: 5rem;
 }
+h4 {
+    margin-left: 10rem;
+}
+
+ul li a {
+    display: flex;
+    justify-content: center;
+}
+
+.item-list {
+    display: flex;
+    justify-content: center;
+}
+
+.item-card:hover{
+    box-shadow: 0px 6px 5px #dedede;
+    transform: translateY(-10px);
+  }
 
 img {
     height: 200px;
@@ -14,10 +32,20 @@ img {
 -moz-box-shadow: -1px 20px 7px -6px rgba(66,50,50,0.69);
 }
 
-.productos-img {
+button {
+    padding: 0.5rem;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    border-color: grey;
+    cursor: pointer;
+}
+
+.item-card {
+    list-style: none;
+    margin: 1rem;
     background-color: rgb(231, 196, 144);
     padding: 1rem;
     border-radius: 5%;
-    animation: animate__flipInX; 
-    animation-duration: 2s; 
+    
 }
