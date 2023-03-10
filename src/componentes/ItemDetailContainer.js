@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import pochis from "../../src/products/products";
 import "./ItemListContainer.css";
+import "./ItemDetailContainer.css";
 
 
 // function getOneItemFromDatabase(idItem) {
@@ -47,7 +48,9 @@ function ItemDetailContainer ({greeting}){
             <ul className="item-list">
             <li className="item-card" key={product.id}>
             <img src={product.pictureUrl} alt={product.description} />
-            <h4>{`${product.title} ${product.detalle} ${product.price} ${product.category}`}</h4>
+            <h2>{`${product.title}: ${product.detalle}`}</h2>
+            <h3> $ {`${product.price}`} </h3>
+            <h3> {`${product.category}`} </h3>
             
             <button>Agregar al carrito</button>
           </li>
