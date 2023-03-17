@@ -43,7 +43,8 @@ function ItemDetailContainer (){
 
 
     function onAddtoCart (count) {
-      alert ("Agregaste ${count} al carrito");
+      console.log(count)
+      // alert ("Agregaste ${count} al carrito");
       addItem (product, count);
     }
 
