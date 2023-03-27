@@ -1,28 +1,10 @@
 import NavBar from ".//componentes/NavBar";
 import ItemListContainer from "./componentes/ItemListContainer";
 import ItemDetailContainer from "./componentes/ItemDetailContainer";
+import CartContainer from "./componentes/CartContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./Context/cartContext";
-
-//.....Config de firebase.............................................................................//
-
-import { initializeApp } from "firebase/app";
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCmCDIbpsOUXsrSGJPtGxtjmYozkunG5EI",
-  authDomain: "react-barreiroandrea-39575.firebaseapp.com",
-  projectId: "react-barreiroandrea-39575",
-  storageBucket: "react-barreiroandrea-39575.appspot.com",
-  messagingSenderId: "898912367205",
-  appId: "1:898912367205:web:b6fb83f57e2b4867528c8c"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
-//.....Config de firebase.............................................................................//
+import { exportDataWithBatch } from "./Services/firestore";
 
 
 function App() {   
@@ -42,7 +24,13 @@ function App() {
         <Route path="/detalle/:idProduct" element={<ItemDetailContainer />}/>
 
         <Route
-        path="/category/:idCategory" element= {<ItemListContainer greeting={"Hola Pochitos!"}/>} />  
+        path="/category/:idCategory" element= {<ItemListContainer greeting={"Hola Pochitos!"}/>} /> 
+
+         <Route path="/cart" element={<CartContainer />} />
+            <Route
+              path="/checkout/:id"
+              element={<h3>Gracias por tu compra</h3>}
+            /> 
 
         </Routes>
         </BrowserRouter> 

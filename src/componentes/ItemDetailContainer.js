@@ -1,6 +1,5 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, getDoc, doc, collection, db } from "react";
 import { useParams } from "react-router-dom";
-import pochis from "../../src/products/products";
 import "./ItemListContainer.css";
 import "./ItemDetailContainer.css";
 import ItemCount from "./ItemCount";
@@ -8,14 +7,30 @@ import cartContext from "../Context/cartContext";
 import Loader from "./folder";
 
 
-function getOneItemFromDatabase(idItem) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        let encontrado = pochis.find((item) => item.id === Number(idItem));
-        resolve(encontrado);
-      }, 2000);
-    });
-  }
+async function getOneItemFromDatabase(idItem) {
+  // referencia de la colección y del documento
+  const pochisColectionRef = collection(db, "pochis");
+  const docRef = doc(pochisColectionRef, idItem);
+
+  // getDoc -> datos
+  const docSnapshot = await getDoc(docRef);
+
+  // extra
+  if (docSnapshot.exists() === false) 
+    throw new Error("No existe el documento") ;
+
+  return { ...docSnapshot.data(), id: docSnapshot.id };
+}
+
+
+// function getOneItemFromDatabase(idItem) {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         let encontrado = pochis.find((item) => item.id === Number(idItem));
+//         resolve(encontrado);
+//       }, 2000);
+//     });
+//   }
 
 
 function ItemDetailContainer (){
@@ -24,12 +39,7 @@ function ItemDetailContainer (){
 
     const params = useParams();
     const idProduct = params.idProduct;
-  
-    useEffect(() => {
-        getOneItemFromDatabase(idProduct).then((respuesta) => {
-            setProduct(respuesta);
-          });
-    },[]);
+
 
     useEffect(() => {
       getOneItemFromDatabase(idProduct)
@@ -39,12 +49,11 @@ function ItemDetailContainer (){
       .catch((error) => alert(error));
     }, []);
 
-    const { addItem } = useContext (cartContext);
+    const { addItem, isInCart } = useContext (cartContext);
 
 
     function onAddtoCart (count) {
-      console.log(count)
-      // alert ("Agregaste ${count} al carrito");
+      alert (`Agregaste ${count} items al carrito`);
       addItem (product, count);
     }
 
@@ -60,15 +69,15 @@ function ItemDetailContainer (){
             <ul className="item-list">
             <li className="item-card" key={product.id}>
             <img src={product.pictureUrl} alt={product.description} />
-            <h2>{`${product.title}: ${product.detalle}`}</h2>
-            <h3> $ {`${product.price}`} </h3>
-            <h3> {`${product.category}`} </h3>
+            <h2>{product.title} {product.detalle}</h2>
+            <h3> $ {product.price}</h3>
+            <small> {product.category} </small>
 
-          {<ItemCount
+          <ItemCount
           onAddtoCart={onAddtoCart}
           initial={1}
           stock={product.stock}
-          />}
+          />
 
           </li>
         </ul>

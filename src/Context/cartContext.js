@@ -1,31 +1,28 @@
 import { createContext, useState } from "react";
 
+const cartContext = createContext({ cart: [] });
+const Provider = cartContext.Provider;
 
-const cartContext = createContext({
-  cart: [],
-});
-
-
-function CartContextProvider(props) {
+export function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  function addItem(product, count) {
-    const newCart = [...cart];
+  function addItem(item, count) {
+    const newCart = JSON.parse(JSON.stringify(cart));
 
-    product.count = count;
-    newCart.push(product);
-    
-
+    if (isInCart(item.id)) {
+      let index = cart.findIndex((itemInCart) => itemInCart.id === item.id);
+      newCart[index].count = newCart[index].count + count;
+    } else {
+      newCart.push({ ...item, count });
+    }
     setCart(newCart);
   }
 
-  function removeItem(id) {
-    
-  }
 
-  function clear() {
+  function removeItem(id) {}
 
-  }
+  function clear() {}
+
 
   function getCountInCart() {
     let total = 0;
@@ -33,14 +30,22 @@ function CartContextProvider(props) {
     return total;
   }
 
+  function isInCart(id) {
+    return cart.some((item) => item.id === id);
+  }
   return (
-    
-    <cartContext.Provider value={{ cart, addItem }}>
-      {props.children}
-    </cartContext.Provider>
+    <Provider
+      value={{ 
+        cart,
+        addItem, 
+        test: "ok", 
+        isInCart, 
+        removeItem,
+        }}
+    >
+      {children}
+    </Provider>
   );
 }
-
-export { CartContextProvider };
 
 export default cartContext;

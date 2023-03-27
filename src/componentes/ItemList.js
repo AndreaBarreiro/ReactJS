@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 import "./ItemList.css";
 
 
-export default function ItemList({ items }) {
+export default function ItemList({ products }) {
     return (
       <div className="item-list-container">
 
         <ul className="item-list">
-          {items.map((item) => (
+          {products.map((product) => (
   
             <ul className="item-list">
             <li className="item-card" 
-            key={item.id}>
-            <img src={item.pictureUrl} alt={item.description} />
-            <h4>{`${item.title}`}</h4>
-            <h4>$ {`${item.price}`}</h4>
+            key={product.id}>
+            <img src={product.pictureUrl} alt={product.description} />
+            <h4>{`${product.title}`}</h4>
+            <h4>$ {`${product.price}`}</h4>
               <br />
   
-              <Link to={`/detalle/${item.id}`}>
+              <Link to={`/detalle/${product.id}`}>
                 <button>Ver más</button>
               </Link>
           </li>
