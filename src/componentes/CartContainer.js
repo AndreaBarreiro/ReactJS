@@ -4,7 +4,7 @@ import cartContext from "../Context/cartContext";
 import CheckoutCart from "./CheckOutCart";
 
 function CartContainer() {
-    const { cart  , removeItemfromCart, getPriceInCart} = useContext(cartContext);
+    const { cart  , removeItem, getPriceInCart, clear} = useContext(cartContext);
 
     return (
         <>
@@ -35,7 +35,8 @@ function CartContainer() {
                 <td>$ {product.price}</td>
                 <td>{product.count}</td>
                 <td>
-                  <button color="#c63224" >X</button>
+                  <button onClick={()=> removeItem (product.id)} color="#c63224" >X</button>   //ver f en cartcontext
+                  <button onClick={clear} >Vaciar Carrito</button>
                 </td>
                 <th>$ --,--</th>
               </tr>

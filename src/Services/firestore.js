@@ -14,6 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
+
 export async function createOrder(orderData) {
     const collectionRef = collection(db, "orders");
   
@@ -27,7 +28,6 @@ export async function createOrder(orderData) {
   
   /* Opcional */
   export async function exportData() {
-    //for ... of
     const collectionRef = collection(db, "pochis");
   
     for (let item of pochis) {

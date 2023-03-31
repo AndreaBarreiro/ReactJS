@@ -19,15 +19,25 @@ export function CartContextProvider({ children }) {
   }
 
 
-  function removeItem(id) {}
+  function removeItem() {
+    const filteredArray = cart.filter (item => item.id !== item.id)
+    
+    setCart(filteredArray);  //ver!!!!!!!!!!!
+  }
 
-  function clear() {}
+  function clear() {
+    setCart([]);
+  };
 
 
   function getCountInCart() {
     let total = 0;
     cart.forEach((item) => total + item.count);
     return total;
+  }
+
+  function getPriceInCart() {
+    return 5600;//hacer aca para que salga el total
   }
 
   function isInCart(id) {
@@ -41,6 +51,9 @@ export function CartContextProvider({ children }) {
         test: "ok", 
         isInCart, 
         removeItem,
+        getCountInCart,
+        getPriceInCart,
+        clear
         }}
     >
       {children}

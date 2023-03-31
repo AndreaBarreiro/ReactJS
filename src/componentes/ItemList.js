@@ -10,10 +10,14 @@ export default function ItemList({ products }) {
         <ul className="item-list">
           {products.map((product) => (
   
-            <ul className="item-list">
-            <li className="item-card" 
-            key={product.id}>
+            // <ul className="item-list">
+            /* <li className="item-card" key={product.id}> */
+            <li style={{ color: product.stock === 0 ? "#ee0033" : "#151515" }}
+            className="item-card"  key={product.id} >
+
             <img src={product.pictureUrl} alt={product.description} />
+
+            {product.stock === 0 && <small>No hay stock</small>}
             <h4>{`${product.title}`}</h4>
             <h4>$ {`${product.price}`}</h4>
               <br />
@@ -22,11 +26,8 @@ export default function ItemList({ products }) {
                 <button>Ver más</button>
               </Link>
           </li>
+           ))}
           </ul>
-            
-          ))}
-
-        </ul>
       </div>
     );
   }

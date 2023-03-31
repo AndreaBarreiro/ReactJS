@@ -5,40 +5,41 @@ import CartContainer from "./componentes/CartContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./Context/cartContext";
 import { exportDataWithBatch } from "./Services/firestore";
+import { exportData } from "./Services/firestore";
 
-
-function App() {   
+function App() {
   return (
     <div className="container">
 
-    <CartContextProvider>
-    <BrowserRouter>
-      <NavBar />
-
-      <Routes>
-        <Route
-          path= "/"
-          element={< ItemListContainer greeting= {"Hola Pochitos!"} /> }
-        />
-
-        <Route path="/detalle/:idProduct" element={<ItemDetailContainer />}/>
-
-        <Route
-        path="/category/:idCategory" element= {<ItemListContainer greeting={"Hola Pochitos!"}/>} /> 
-
-         <Route path="/cart" element={<CartContainer />} />
-            <Route
-              path="/checkout/:id"
-              element={<h3>Gracias por tu compra</h3>}
-            /> 
-
-        </Routes>
-        </BrowserRouter> 
-        </CartContextProvider>
-
+      <button onClick={exportData}>export data</button>
       
-    </div>
+      <CartContextProvider>
+        <BrowserRouter>
+          <NavBar />
 
+          <Routes>
+            <Route
+              path="/"
+              element={<ItemListContainer greeting={"Hola Pochitos!"} />}
+            />
+
+            <Route
+              path="/detalle/:idProduct"
+              element={<ItemDetailContainer />}
+            />
+
+            <Route
+              path="/category/:idCategory"
+              element={<ItemListContainer greeting={"Hola Pochitos!"} />}
+            />
+
+            <Route path="/cart" element={<CartContainer />} />
+            <Route path="/checkout/:id" element={<h3>Gracias por tu compra</h3>}/>
+            
+          </Routes>
+        </BrowserRouter>
+      </CartContextProvider>
+    </div>
   );
 }
 

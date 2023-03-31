@@ -1,7 +1,9 @@
 .NavBar {
     display: revert;
     background: rgb(204,104,27);
-background: linear-gradient(10deg, rgba(204,104,27,1) 71%, rgba(139,65,28,1) 82%);
+    background: linear-gradient(10deg, rgba(204,104,27,1) 71%, rgba(139,65,28,1) 82%);
+    box-sizing: content-box;
+    width: 100%;
 }
 
 .header {
@@ -37,13 +39,19 @@ h2 {
 .enlaces {
     display: flex;
     align-items: end;
+    list-style-type: none;
 }
-
-nav ul {
+ul {
     display: flex;
 }
 
-nav ul a {
+.menu {
+    display: -webkit-box;
+    gap: 1rem;
+    list-style-type: none;
+}
+
+ul a {
     text-decoration: none;
     margin: 1rem;
     color: bisque;
@@ -51,7 +59,7 @@ nav ul a {
     font-size: 1.8rem;
 }
 
-nav ul a:hover {
+ul a:hover {
     background-color: wheat;
     color: rgb(121, 61, 6);
     padding: 0.8rem;

@@ -4,7 +4,7 @@ const pochis = [
         title: "Peluche",
         description: "Juguetes",
         price: 2300,
-        pictureUrl: "https://scontent.faep35-1.fna.fbcdn.net/v/t1.6435-9/69385134_10156742505793869_6270167045409603584_n.jpg?stp=dst-jpg_s960x960&_nc_cat=104&ccb=1-7&_nc_sid=9267fe&_nc_eui2=AeF8qfdRANTA_a8ad2qPcvU4iSMdamcOT1qJIx1qZw5PWsNIphO1V771kpJ6XaZe6nTMeaBJDyXRedWhe_qgBZ6p&_nc_ohc=sk0ds_zMrmcAX_WmmJj&_nc_oc=AQnZwqRAL60zvOzsFwRoiuXF5aOVPyjs1kr5ICSojxqIGdtnTVg8B63kkmfjnjcc-iIq3rvTXo4lwCjMmsDtSXa-&_nc_ht=scontent.faep35-1.fna&oh=00_AfCEdCLCIopxCzTTLV8SBcv5U77e9JRwJyOzWBAhlQ5UFg&oe=64206E02",
+        pictureUrl: "https://elreciennacido.com/4656-home_default/peluche-con-nombre-conejo-bunny-bordado-con-nombre.jpg",
         detalle: "Juguete hecho a mano, suave, con el bordado del nombre",
         category: "juguetes",
         stock: 15
@@ -30,5 +30,17 @@ const pochis = [
         stock: 20
     }
 ];
+
+
+// deep clone (con JS vanilla)
+const pochisJSON = JSON.stringify(pochis);
+const newPochis = JSON.parse(pochisJSON);
+
+const newProduct = { id: 5, title: "Perfumes" };
+newPochis.push(newProduct);
+
+newPochis[1].category = "piel";
+
+console.log(newPochis);
 
 export default pochis;

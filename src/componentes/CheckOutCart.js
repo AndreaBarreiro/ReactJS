@@ -11,7 +11,7 @@ function CheckoutCart({ cart, total }) {
     // 1. Importar firebase (la funcion)
     // 2. Crear nuestro objeto de orden
     const orderData = {
-      buyer: { name: "Santiago", phone: "12345", email: "santi@santi.com" },
+      buyer: { name: "Paola Gonzalez", phone: "1123456533", email: "paolagonzalez23@gmail.com" },
       items: cart,
       total: total,
       timestamp: new Date(),

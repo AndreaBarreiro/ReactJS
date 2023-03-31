@@ -7,7 +7,7 @@ function CartWidget() {
   const { cart, test } = useContext (cartContext);
   
 
-  const cartCount = cart.length
+  const cartCount = cart.length //sacar y ver como lo consume el cardwidget desde navbar
 
   return (
 

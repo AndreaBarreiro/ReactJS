@@ -14,24 +14,32 @@ function NavBar() {
         </div>
 
         <div className="h-uno">
-          <h1>... una tienda <br></br> muy especial...</h1>
+          <h1>
+            ... una tienda <br></br> muy especial...
+          </h1>
         </div>
 
         <div className="enlaces">
-          <nav>
+          <ul className="menu" >
             <li>
-            <ul>
               <Link to="/">Inicio</Link>
-              <Link to="/category/juguetes">Juguetes</Link>
-              <Link to="/category/ropadeblanco">Ropa de Blanco</Link>
-              <Link to="/category/accesorios">Accesorios</Link>
-            </ul>
             </li>
-          </nav>
+            <li>
+              <Link to="/category/juguetes">Juguetes</Link>
+            </li>
+            <li>
+              <Link to="/category/ropadeblanco">Ropa de Blanco</Link>
+            </li>
+            <li>
+              <Link to="/category/accesorios">Accesorios</Link>
+            </li>
+          </ul>
         </div>
 
         <div className="carrito">
-          <CartWidget />
+          <Link to="/cart">
+            <CartWidget />
+          </Link>
         </div>
       </header>
     </div>

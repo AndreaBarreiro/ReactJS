@@ -16,19 +16,36 @@ const ItemCount = ({ initial, stock, onAddtoCart }) => {
     };
 
     return (
-        <div>
-            <button onClickButton={decrease} >
-                - 
-            </button>
-
-            <div> {count} </div>
-            
-            <button onClick={increase} >
-                + </button>
-            <button onClick={()=> onAddtoCart(count)} > Agregar al carrito </button>
-
+        <div className="itemcount_container">
+        <small>Agregá la cantidad deseada al carrito</small>
+        <div className="itemcount_control">
+            <button color="red" onTouchButton={decrease} > - </button>
+          <span className="itemcount_count">{count}</span>
+          <button color="green" onTouchButton={increase}> + </button>
         </div>
+  
+        <div className="itemcount_btns">
+            <button color="lightblue"
+            className="btn"
+            onTouchButton={() => onAddtoCart(count)} > Agregar al carrito </button>
+        </div>
+      </div>
     );
+
+    // return (
+    //     <div>
+    //         <button onClickButton={decrease} >
+    //             - 
+    //         </button>
+
+    //         <div> {count} </div>
+            
+    //         <button onClick={increase} >
+    //             + </button>
+    //         <button onClick={()=> onAddtoCart(count)} > Agregar al carrito </button>
+
+    //     </div>
+    // );
 };
 
 export default ItemCount;

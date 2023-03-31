@@ -21,8 +21,6 @@ async function getOneItemFromDatabase(idItem) {
 
   return { ...docSnapshot.data(), id: docSnapshot.id };
 }
-
-
 // function getOneItemFromDatabase(idItem) {
 //     return new Promise((resolve, reject) => {
 //       setTimeout(() => {
@@ -49,7 +47,7 @@ function ItemDetailContainer (){
       .catch((error) => alert(error));
     }, []);
 
-    const { addItem, isInCart } = useContext (cartContext);
+    const { addItem } = useContext (cartContext);
 
 
     function onAddtoCart (count) {
@@ -63,24 +61,20 @@ function ItemDetailContainer (){
     
       return (
     <>
-        <div className="productos-content">
-            {/* <h2>{greeting}</h2> */}
+          <div className="card-detail">
+            <div className="card-img" key={product.id}>
+              <img src={product.pictureUrl} alt={product.description} />
+            </div>
 
-            <ul className="item-list">
-            <li className="item-card" key={product.id}>
-            <img src={product.pictureUrl} alt={product.description} />
-            <h2>{product.title} {product.detalle}</h2>
-            <h3> $ {product.price}</h3>
-            <small> {product.category} </small>
+            <div>
+              <h2>{product.title} {product.detalle}</h2>
+              <h3> $ {product.price}</h3>
+              <small> {product.category} </small>
+            </div>
 
           <ItemCount
-          onAddtoCart={onAddtoCart}
-          initial={1}
-          stock={product.stock}
+          onAddtoCart={onAddtoCart} initial={1} stock={product.stock}
           />
-
-          </li>
-        </ul>
         </div>
       </>
     );
