@@ -46,8 +46,7 @@ ul {
 }
 
 .menu {
-    display: -webkit-box;
-    gap: 1rem;
+    display: inline-flex;
     list-style-type: none;
 }
 

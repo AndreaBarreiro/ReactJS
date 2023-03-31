@@ -21,15 +21,6 @@ async function getOneItemFromDatabase(idItem) {
 
   return { ...docSnapshot.data(), id: docSnapshot.id };
 }
-// function getOneItemFromDatabase(idItem) {
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         let encontrado = pochis.find((item) => item.id === Number(idItem));
-//         resolve(encontrado);
-//       }, 2000);
-//     });
-//   }
-
 
 function ItemDetailContainer (){
 

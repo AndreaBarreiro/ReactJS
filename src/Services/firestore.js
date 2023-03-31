@@ -3,12 +3,12 @@ import { getFirestore, collection, addDoc, doc, writeBatch } from "firebase/fire
 import pochis from "../products/products";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCcMmoU_Dq3DqL-_f8iB8F7fuIs3ri8ajA",
-  authDomain: "react-39575.firebaseapp.com",
-  projectId: "react-39575",
-  storageBucket: "react-39575.appspot.com",
-  messagingSenderId: "116633603587",
-  appId: "1:116633603587:web:298e0d416a2d68b3474836",
+  apiKey: "AIzaSyCmCDIbpsOUXsrSGJPtGxtjmYozkunG5EI",
+  authDomain: "react-barreiroandrea-39575.firebaseapp.com",
+  projectId: "react-barreiroandrea-39575",
+  storageBucket: "react-barreiroandrea-39575.appspot.com",
+  messagingSenderId: "898912367205",
+  appId: "1:898912367205:web:b6fb83f57e2b4867528c8c"
 };
 
 const app = initializeApp(firebaseConfig);
