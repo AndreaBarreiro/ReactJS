@@ -6,7 +6,7 @@ import ItemCount from "./ItemCount";
 import cartContext from "../Context/cartContext";
 import Loader from "./folder";
 import { db } from "../Services/firestore"
-import { getDoc, doc, collection } from "firebase/firestore"
+import { getDoc, doc, collection } from "firebase/firestore";
 
 
 async function getOneItemFromDatabase(idItem) {
@@ -45,6 +45,7 @@ function ItemDetailContainer (){
 
     function onAddtoCart (count) {
       alert (`Agregaste ${count} items al carrito`);
+      // swal('Agregaste ${count} items al carrito');
       addItem (product, count);
     }
 
@@ -59,9 +60,9 @@ function ItemDetailContainer (){
             </div>
 
             <div>
-              <h2>{product.title} {product.detalle}</h2>
+              <h2>{product.title} <br></br>{product.detalle}</h2>
               <h3> $ {product.price}</h3>
-              <small> {product.category} </small>
+              <h5 style={{fontSize: "2rem"}} > {product.category} </h5>
             </div>
 
           <ItemCount

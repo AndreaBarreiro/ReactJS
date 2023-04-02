@@ -13,3 +13,10 @@ button {
     display: flex;
     justify-content: center;
 }
+
+.Item-container {
+  background-color: rgb(231, 196, 144);
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 3%;
+}

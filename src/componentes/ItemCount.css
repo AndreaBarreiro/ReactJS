@@ -1,11 +1,18 @@
-.itemcount_container {
+div.itemcount_control {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
+    margin-left: 6rem;
 }
+
+span.itemcount_count {
+    margin-left: 20%;
+    font-size: 2rem;
+}
+
+.itemcount_btns {
+    margin-left: 11rem;
+} 
 
 h4 {
     font-size: 1rem;

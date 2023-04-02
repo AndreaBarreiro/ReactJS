@@ -4,7 +4,8 @@ import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import CartContainer from "./componentes/CartContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./Context/cartContext";
-import CheckoutForm from "./componentes/CheckOutCart";
+import Footer from "./componentes/Footer";
+
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             {/* <Route exact path="/checkout" element={<CheckoutForm />} /> */}
             
           </Routes>
+          <Footer />
         </BrowserRouter>
       </CartContextProvider>
     </div>

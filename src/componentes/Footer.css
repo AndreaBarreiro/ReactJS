@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: self-end;
+    background: rgb(204,104,27);
+    background: linear-gradient(10deg, rgba(204,104,27,1) 71%, rgba(139,65,28,1) 82%);
+}
+
+.logoF {
+    height: 100px;
+    width: auto;
+}
+

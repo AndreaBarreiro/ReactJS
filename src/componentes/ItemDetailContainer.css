@@ -8,3 +8,12 @@ h3 {
     font-style: italic;
 }
 
+.card-detail {
+    display: inline-block;
+    margin-left: 30%;
+    padding: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgba(231, 196, 144, 0.658);
+    border-radius: 5%;
+}

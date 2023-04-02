@@ -5,6 +5,7 @@ import CheckoutCart from "./CheckOutCart";
 
 function CartContainer() {
     const { cart, removeItem, getPriceInCart, clear} = useContext(cartContext);
+        
 
     return (
         <>
@@ -38,7 +39,7 @@ function CartContainer() {
                   <button onClick={()=> removeItem (product.id)} color="#FAD7A0 " >❌</button> 
                   <button onClick={clear} >Vaciar Carrito</button>
                 </td>
-                <th>$ --,--</th>
+                <th>$ {getPriceInCart()}</th>
               </tr>
             );
           })}
@@ -46,7 +47,7 @@ function CartContainer() {
         </table>
   
         <div className="cartList_detail">
-          <h4>El total de tu compra es de $ --,--</h4>
+          <h4>El total de tu compra es de $ </h4>
         </div>
         <CheckoutCart total={getPriceInCart()} cart={cart}/>
 
