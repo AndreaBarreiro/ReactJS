@@ -17,7 +17,7 @@ const ItemCount = ({ initial, stock, onAddtoCart }) => {
 
     return (
         <div className="itemcount_container">
-        <small>Agregá la cantidad deseada al carrito</small>
+        <medium>Agregá la cantidad deseada al carrito</medium>
         <div className="itemcount_control">
             <button color="red" onTouchButton={decrease} > - </button>
           <span className="itemcount_count">{count}</span>
@@ -25,27 +25,12 @@ const ItemCount = ({ initial, stock, onAddtoCart }) => {
         </div>
   
         <div className="itemcount_btns">
-            <button color="lightblue"
+            <button color="orange"
             className="btn"
-            onTouchButton={() => onAddtoCart(count)} > Agregar al carrito </button>
+            onTouchButton={onAddtoCart} > Agregar al carrito </button>
         </div>
       </div>
     );
-
-    // return (
-    //     <div>
-    //         <button onClickButton={decrease} >
-    //             - 
-    //         </button>
-
-    //         <div> {count} </div>
-            
-    //         <button onClick={increase} >
-    //             + </button>
-    //         <button onClick={()=> onAddtoCart(count)} > Agregar al carrito </button>
-
-    //     </div>
-    // );
 };
 
 export default ItemCount;

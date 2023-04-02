@@ -38,6 +38,7 @@ h2 {
 
 .enlaces {
     display: flex;
+    flex-direction: column-reverse;
     align-items: end;
     list-style-type: none;
 }

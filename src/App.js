@@ -4,13 +4,13 @@ import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import CartContainer from "./componentes/CartContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./Context/cartContext";
-import { exportData } from "./Services/firestore";
+import CheckoutForm from "./componentes/CheckOutCart";
 
 function App() {
   return (
     <div className="container">
 
-      <button onClick={exportData}>export data</button>
+      {/* <button onClick={exportData}>export data</button> */}
       
       <CartContextProvider>
         <BrowserRouter>
@@ -34,6 +34,7 @@ function App() {
 
             <Route path="/cart" element={<CartContainer />} />
             <Route path="/checkout/:id" element={<h3>Gracias por tu compra</h3>}/>
+            {/* <Route exact path="/checkout" element={<CheckoutForm />} /> */}
             
           </Routes>
         </BrowserRouter>

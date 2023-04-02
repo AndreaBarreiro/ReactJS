@@ -19,11 +19,15 @@ export function CartContextProvider({ children }) {
   }
 
 
-  function removeItem() {
-    const filteredArray = cart.filter (item => item.id !== item.id)
+  const removeItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+};
+
+  // function removeItem() {
+  //   const filteredArray = cart.filter (item => item.id !== item.id)
     
-    setCart(filteredArray);  //ver!!!!!!!!!!!
-  }
+  //   setCart(filteredArray);  //ver!!!!!!!!!!!
+  // }
 
   function clear() {
     setCart([]);
@@ -37,8 +41,11 @@ export function CartContextProvider({ children }) {
   }
 
   function getPriceInCart() {
-    return 5600;//hacer aca para que salga el total
-  }
+    //hacer aca para que salga el total-verrrrrrrrrrrrrrr
+    let total = 0;
+    cart.forEach((item) => total * item.count);
+    return total;
+  } 
 
   function isInCart(id) {
     return cart.some((item) => item.id === id);

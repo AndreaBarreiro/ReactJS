@@ -1,5 +1,22 @@
 # Getting Started with Create React App
 
+Curso de React de CoderHouse
+Alumna: Barreiro Andrea
+Proyecto: E-Commerce- Nombre: Pochitrokes
+
+Componentes: NavBar
+CartWidget
+ItemListContainer
+ItemList
+ItemDetailContainer
+ItemDetail
+CheckOutCart
+CheckOutForm
+CartContext
+CartContainer
+AddItemButton
+Checkout
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

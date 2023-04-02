@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ItemListContainer.css";
 import ItemList from "./ItemList";
-// import pochis from "../../src/products/products";
+//import pochis from "../../src/products/products";
 import { useParams } from "react-router-dom";
 import Loader from "./folder";
 import {  addDoc, collection, getDocs, query, where } from "firebase/firestore";
@@ -61,7 +61,7 @@ function ItemListContainer({ greeting }) {
   return (
     <div className="container">
       <h2>{greeting}</h2>
-      {isLoading ? <Loader color="#E29140" /> : <ItemList products={products} />}
+      {isLoading ? <Loader color="#E29140"/> : <ItemList products={products} />}
     </div>
   );
 }

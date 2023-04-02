@@ -1,21 +1,23 @@
-import { useState, useEffect, useContext, getDoc, doc, collection, db } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
 import "./ItemDetailContainer.css";
 import ItemCount from "./ItemCount";
 import cartContext from "../Context/cartContext";
 import Loader from "./folder";
+import { db } from "../Services/firestore"
+import { getDoc, doc, collection } from "firebase/firestore"
 
 
 async function getOneItemFromDatabase(idItem) {
-  // referencia de la colección y del documento
+  
   const pochisColectionRef = collection(db, "pochis");
   const docRef = doc(pochisColectionRef, idItem);
 
-  // getDoc -> datos
+  
   const docSnapshot = await getDoc(docRef);
 
-  // extra
+  
   if (docSnapshot.exists() === false) 
     throw new Error("No existe el documento") ;
 
@@ -46,7 +48,6 @@ function ItemDetailContainer (){
       addItem (product, count);
     }
 
-  //   //2. rendering condicional con return anticipado (early return)
   if (product.title === undefined) return <Loader />;
   
     
@@ -64,7 +65,7 @@ function ItemDetailContainer (){
             </div>
 
           <ItemCount
-          onAddtoCart={onAddtoCart} initial={1} stock={product.stock}
+          onAddtoCart={onAddtoCart} initial={0} stock={product.stock}
           />
         </div>
       </>
