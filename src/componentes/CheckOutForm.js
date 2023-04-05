@@ -32,7 +32,7 @@ export default function CheckoutForm(props) {
 
   return (
     <div>
-      <h2>Completa tus datos para completar la compra🛍</h2>
+      <h2>Completa tus datos para completar la compra </h2>
       <div style={{ display: "flex", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
         <input
@@ -56,7 +56,7 @@ export default function CheckoutForm(props) {
       </div>
 
       <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Phone</label>
+        <label style={{ width: "100px", marginRight: 4 }}>Teléfono</label>
         <input
           value={productData.phone}
           name="phone"
@@ -75,7 +75,7 @@ export default function CheckoutForm(props) {
         }
         onClick={submitData}
       >
-        Crear orden
+        Crear Orden de Compra
       </button>
       
       <button onClick={clearForm}>Limpiar formulario</button>
