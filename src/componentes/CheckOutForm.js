@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./CheckOutForm.css";
 
 export default function CheckoutForm(props) {
   const [productData, setProductData] = useState({
@@ -31,7 +32,7 @@ export default function CheckoutForm(props) {
   }
 
   return (
-    <div>
+    <div className="formulario-chekout" >
       <h2>Completa tus datos para completar la compra </h2>
       <div style={{ display: "flex", marginBottom: 8 }}>
         <label style={{ width: "100px", marginRight: 4 }}>Nombre</label>
@@ -78,7 +79,7 @@ export default function CheckoutForm(props) {
         Crear Orden de Compra
       </button>
       
-      <button onClick={clearForm}>Limpiar formulario</button>
+      <button style={{ marginTop: "1rem" }} onClick={clearForm}>Limpiar formulario</button>
     </div>
   );
 }

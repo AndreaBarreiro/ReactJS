@@ -3,11 +3,11 @@ import { getFirestore, collection, addDoc, doc, writeBatch } from "firebase/fire
 import pochis from "../products/products";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCmCDIbpsOUXsrSGJPtGxtjmYozkunG5EI",
-  authDomain: "react-barreiroandrea-39575.firebaseapp.com",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
   projectId: "react-barreiroandrea-39575",
   storageBucket: "react-barreiroandrea-39575.appspot.com",
-  messagingSenderId: "898912367205",
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_ID,
   appId: "1:898912367205:web:b6fb83f57e2b4867528c8c"
 };
 
