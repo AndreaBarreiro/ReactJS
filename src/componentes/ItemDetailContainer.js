@@ -43,7 +43,7 @@ function ItemDetailContainer (){
     const { addItem } = useContext (cartContext);
 
 
-    function onAddtoCart (count) {
+    function onAddtoCart(count) {
       alert (`Agregaste ${count} items al carrito`);
       // swal('Agregaste ${count} items al carrito');
       addItem (product, count);
