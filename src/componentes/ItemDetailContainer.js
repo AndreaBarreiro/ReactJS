@@ -7,6 +7,7 @@ import cartContext from "../Context/cartContext";
 import Loader from "./folder";
 import { db } from "../Services/firestore"
 import { getDoc, doc, collection } from "firebase/firestore";
+import swal from "sweetalert2";
 
 
 async function getOneItemFromDatabase(idItem) {
@@ -42,10 +43,9 @@ function ItemDetailContainer (){
 
     const { addItem } = useContext (cartContext);
 
-
     function onAddtoCart(count) {
-      alert (`Agregaste ${count} items al carrito`);
-      // swal('Agregaste ${count} items al carrito');
+      // alert (`Agregaste ${count} items al carrito`);
+      swal.fire(`Agregaste ${count} items al carrito`);
       addItem (product, count);
     }
 
