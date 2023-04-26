@@ -1,12 +1,16 @@
+div.itemcount_container {
+    display: flex;
+    align-items: center;
+}
+
 div.itemcount_control {
     display: flex;
     justify-content: start;
     align-items: center;
-    margin-left: 6rem;
 }
 
 span.itemcount_count {
-    margin-left: 20%;
+    margin-left: 30%;
     font-size: 2rem;
 }
 
@@ -16,5 +20,11 @@ span.itemcount_count {
 
 h4 {
     font-size: 1rem;
+}
+
+.btn {
+    background-color: rgba(210, 105, 30, 0.849);
+    font-weight: bold;
+    font-family: cursive;
 }
 

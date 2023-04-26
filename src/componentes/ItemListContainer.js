@@ -7,13 +7,6 @@ import Loader from "./folder";
 import {  addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../Services/firestore";
 
-// function getItemsFromDatabase () {
-//   return new Promise ( (resolve, rejet)=> {
-//     setTimeout(()=> {
-//     resolve (pochis);
-//   }, 2000)
-//   })
-// };
 
 async function getItemsFromDatabase() {
   const pochisColectionRef = collection(db, "pochis");
@@ -61,7 +54,7 @@ function ItemListContainer({ greeting }) {
   return (
     <div className="container">
       <h2>{greeting}</h2>
-      {isLoading ? <Loader color="#E29140"/> : <ItemList products={products} />}
+      {isLoading ? <Loader color="#E29140" marginLeft="50px" /> : <ItemList products={products} />}
     </div>
   );
 }

@@ -8,8 +8,6 @@ function ItemDetail (Product){
          
             {Product.map(product => {
                 return <Product  product={product} key={product.id} />
-                
-                // title={product.title} description={product.description} img={product.pictureUrl} price={product.price} detalle={product.detalle}
             })}
         </div>
     );

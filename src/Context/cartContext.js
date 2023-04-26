@@ -18,19 +18,15 @@ export function CartContextProvider({ children }) {
     setCart(newCart);
   }
 
+
   const removeItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));
-  };
-
-  // function removeItem() {
-  //   const filteredArray = cart.filter (item => item.id !== item.id)
-
-  //   setCart(filteredArray);  //ver!!!!!!!!!!!
-  // }
+};
 
   function clear() {
     setCart([]);
-  }
+  };
+
 
   function getCountInCart() {
     let total = 0;
@@ -41,25 +37,27 @@ export function CartContextProvider({ children }) {
   function getPriceInCart() {
     //hacer aca para que salga el total-verrrrrrrrrrrrrrr
     let total = 0;
-    cart.forEach((item) => item.price * item.count);
+    cart.forEach((item) => total += item.price * item.count);
     return total;
-  }
+  } 
 
   function isInCart(id) {
     return cart.some((item) => item.id === id);
   }
+
   return (
     <Provider
-      value={{
+      value={{ 
         cart,
-        addItem,
-        test: "ok",
-        isInCart,
+        addItem, 
+        test: "ok", 
+        isInCart, 
         removeItem,
         getCountInCart,
         getPriceInCart,
         clear,
-      }}
+        setCart
+        }}
     >
       {children}
     </Provider>
